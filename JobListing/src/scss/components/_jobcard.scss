@@ -1,0 +1,51 @@
+@use "/src/scss/base/fonts";
+@use "/src/scss/base/variables";
+
+.jobCard {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.jobInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;    
+}
+
+.jobDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    .companyName {
+        color: variables.$primaryColor;
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+
+    .jobTitle {
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+    div:nth-child(3) {
+        display: flex;
+        font-weight: 300;
+        gap: 1rem;
+        color: hsl(180, 8%, 52%);
+    }
+}
+
+.jobTags {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+
+    h2 {
+        background-color: variables.$secondaryColor;
+        color: variables.$primaryColor;
+        padding: 5px;
+    }
+}

@@ -1,9 +1,11 @@
+@use "/src/scss/base/variables";
+
 header {
     width: 100vw;
     width: 100dvw;
     height: 15vh;
     background-image: url("images/bg-header-desktop.svg");
     background-size: cover;
-    background-color: hsl(180, 29%, 50%);
+    background-color: variables.$primaryColor;
 
 }
