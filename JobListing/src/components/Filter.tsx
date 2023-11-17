@@ -1,8 +1,12 @@
 import React from "react";
 import "../scss/components/_filter.scss";
 
-export const Filter: React.FC = () => {
-  let roleFilter: Array<string> = [];
+type FilterProps = {
+  applyRoleFilter: (roles: Array<string>) => void;
+};
+
+export const Filter: React.FC<FilterProps> = ({ applyRoleFilter }) => {
+  let roles: Array<string> = [];
   return (
     <form className="filter">
       <h2>Role</h2>
@@ -13,14 +17,12 @@ export const Filter: React.FC = () => {
             type="checkbox"
             value="Frontend"
             onChange={(e) => {
-              if (!roleFilter.includes(e.target.value)) {
-                roleFilter = [...roleFilter, e.target.value];
+              if (!roles?.includes(e.target.value)) {
+                roles = [...roles, e.target.value];
               } else {
-                roleFilter = roleFilter.filter(
-                  (role) => role !== e.target.value
-                );
+                roles = roles.filter((role) => role !== e.target.value);
               }
-              console.log(roleFilter);
+              console.log(roles);
             }}
           />
         </label>
@@ -30,14 +32,12 @@ export const Filter: React.FC = () => {
             type="checkbox"
             value="Backend"
             onChange={(e) => {
-              if (!roleFilter.includes(e.target.value)) {
-                roleFilter = [...roleFilter, e.target.value];
+              if (!roles?.includes(e.target.value)) {
+                roles = [...roles, e.target.value];
               } else {
-                roleFilter = roleFilter.filter(
-                  (role) => role !== e.target.value
-                );
+                roles = roles.filter((role) => role !== e.target.value);
               }
-              console.log(roleFilter);
+              console.log(roles);
             }}
           />
         </label>
@@ -47,18 +47,24 @@ export const Filter: React.FC = () => {
             type="checkbox"
             value="Fullstack"
             onChange={(e) => {
-              if (!roleFilter.includes(e.target.value)) {
-                roleFilter = [...roleFilter, e.target.value];
+              if (!roles?.includes(e.target.value)) {
+                roles = [...roles, e.target.value];
               } else {
-                roleFilter = roleFilter.filter(
-                  (role) => role !== e.target.value
-                );
+                roles = roles.filter((role) => role !== e.target.value);
               }
+              console.log(roles);
             }}
           />
         </label>
       </div>
-      <button onClick={() => {}}>Filter</button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          applyRoleFilter(roles);
+        }}
+      >
+        Filter
+      </button>
       <button onClick={() => {}}>Reset</button>
     </form>
   );
