@@ -1,10 +1,12 @@
 import { JobCard } from "./JobCard";
 import "../scss/components/_joblist.scss";
-import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
+import { JobObject } from "../types/JobObject.type";
 
-export const JobList: React.FC = () => {
-  const { data } = useContext(DataContext);
+type JobListProps = {
+  data: Array<JobObject>;
+};
+
+export const JobList: React.FC<JobListProps> = ({ data }) => {
   return (
     <div className="jobList">
       {data.map((job) => {
