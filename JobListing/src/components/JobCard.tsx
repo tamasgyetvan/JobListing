@@ -3,9 +3,10 @@ import "../scss/components/_jobcard.scss";
 
 type JobCardProps = {
   job: JobObject;
+  tags: Array<string>;
 };
 export const JobCard: React.FC<JobCardProps> = (props) => {
-  const { job } = props;
+  const { job, tags } = props;
   return (
     <div className={job.featured ? "jobCard featured" : "jobCard"} key={job.id}>
       <div className="jobInfo">
@@ -25,13 +26,8 @@ export const JobCard: React.FC<JobCardProps> = (props) => {
         </div>
       </div>
       <div className="jobTags">
-        <h2>{job.role}</h2>
-        <h2>{job.level}</h2>
-        {job.languages.map((lang) => {
-          return <h2>{lang}</h2>;
-        })}
-        {job.tools.map((tool) => {
-          return <h2>{tool}</h2>;
+        {tags.map((tag) => {
+          return <h2>{tag}</h2>;
         })}
       </div>
     </div>
