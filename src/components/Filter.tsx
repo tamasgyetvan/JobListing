@@ -3,10 +3,13 @@ import "../scss/components/_filter.scss";
 import { Checkbox } from "./Checkbox";
 
 type FilterProps = {
-  applyRoleFilter: (roles: Array<string>) => void;
+  applyFilters: (
+    roleFilterArray: Array<string>,
+    levelFilterArray: Array<string>
+  ) => void;
 };
 
-export const Filter: React.FC<FilterProps> = ({ applyRoleFilter }) => {
+export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
   let roles: Array<string> = [];
   let levels: Array<string> = [];
 
@@ -22,7 +25,7 @@ export const Filter: React.FC<FilterProps> = ({ applyRoleFilter }) => {
     if (!levels.includes(e.target.value)) {
       levels = [...levels, e.target.value];
     } else {
-      levels.filter((level) => level !== e.target.value);
+      levels = levels.filter((level) => level !== e.target.value);
     }
   };
   return (
@@ -41,7 +44,7 @@ export const Filter: React.FC<FilterProps> = ({ applyRoleFilter }) => {
       <button
         onClick={(e) => {
           e.preventDefault();
-          applyRoleFilter(roles);
+          applyFilters(roles, levels);
         }}
       >
         Filter

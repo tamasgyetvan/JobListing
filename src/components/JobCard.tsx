@@ -8,7 +8,7 @@ type JobCardProps = {
 export const JobCard: React.FC<JobCardProps> = (props) => {
   const { job, tags } = props;
   return (
-    <div className={job.featured ? "jobCard featured" : "jobCard"} key={job.id}>
+    <div key={job.id} className={job.featured ? "jobCard featured" : "jobCard"}>
       <div className="jobInfo">
         <img className="jobLogo" src={job.logo} alt="Job logo" />
         <div className="jobDetails">
