@@ -13,19 +13,33 @@ const MemoFilter = React.memo(Filter);
 function App() {
   const [jobData, setJobData] = useState<Array<JobObject>>(data);
 
-  const applyRoleFilter = useCallback((filterArray: Array<string>) => {
-    if (filterArray?.length !== 0) {
-      setJobData(data.filter((job) => filterArray?.includes(job.role)));
-    } else {
-      setJobData(data);
-    }
-  }, []);
+  const applyFilters = useCallback(
+    (roleFilterArray: Array<string>, levelFilterArray: Array<string>) => {
+      let filterData = data;
+
+      console.log(roleFilterArray, levelFilterArray, filterData);
+      if (roleFilterArray?.length !== 0) {
+        filterData = filterData.filter((job) =>
+          roleFilterArray.includes(job.role)
+        );
+      }
+
+      if (levelFilterArray?.length !== 0) {
+        filterData = filterData.filter((job) =>
+          levelFilterArray.includes(job.level)
+        );
+      }
+
+      setJobData(filterData);
+    },
+    []
+  );
 
   return (
     <>
       <Header></Header>
       <main>
-        <MemoFilter applyRoleFilter={applyRoleFilter}></MemoFilter>
+        <MemoFilter applyFilters={applyFilters}></MemoFilter>
         <JobList data={jobData}></JobList>
       </main>
     </>
