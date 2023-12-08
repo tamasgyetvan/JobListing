@@ -44,11 +44,9 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
   return (
     <form className="filter">
       <div className="inputContainer">
-        <RoleFilter handleRoleInput={handleRoleInput}></RoleFilter>
-        <LevelFilter handleLevelInput={handleLevelInput}></LevelFilter>
-        <ContractTypeFilter
-          handleContractTypeInput={handleContractTypeInput}
-        ></ContractTypeFilter>
+        <RoleFilter handleRoleInput={handleRoleInput} />
+        <LevelFilter handleLevelInput={handleLevelInput} />
+        <ContractTypeFilter handleContractTypeInput={handleContractTypeInput} />
       </div>
       <div className="buttonContainer">
         <button
@@ -59,7 +57,6 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
         >
           Filter
         </button>
-
         <button onClick={() => {}}>Reset</button>
       </div>
     </form>

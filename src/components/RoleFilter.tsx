@@ -8,9 +8,9 @@ export const RoleFilter: React.FC<RoleFilterProps> = ({ handleRoleInput }) => {
   return (
     <div className="roleFilter">
       <h2>Role</h2>
-      <Checkbox value={"Frontend"} handleInput={handleRoleInput}></Checkbox>
-      <Checkbox value={"Backend"} handleInput={handleRoleInput}></Checkbox>
-      <Checkbox value={"Fullstack"} handleInput={handleRoleInput}></Checkbox>
+      <Checkbox value={"Frontend"} handleInput={handleRoleInput} />
+      <Checkbox value={"Backend"} handleInput={handleRoleInput} />
+      <Checkbox value={"Fullstack"} handleInput={handleRoleInput} />
     </div>
   );
 };

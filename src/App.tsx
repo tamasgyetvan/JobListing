@@ -21,7 +21,6 @@ function App() {
     ) => {
       let filterData = data;
 
-      console.log(roleFilterArray, levelFilterArray, filterData);
       if (roleFilterArray?.length !== 0) {
         filterData = filterData.filter((job) =>
           roleFilterArray.includes(job.role)
@@ -47,10 +46,10 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <main>
-        <MemoFilter applyFilters={applyFilters}></MemoFilter>
-        <JobList data={jobData}></JobList>
+        <MemoFilter applyFilters={applyFilters} />
+        <JobList data={jobData} />
       </main>
     </>
   );
