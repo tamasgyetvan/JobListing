@@ -9,10 +9,14 @@ type JobListProps = {
 export const JobList: React.FC<JobListProps> = ({ data }) => {
   return (
     <div className="jobList">
-      {data.map((job) => {
-        const tags = [job.role, job.level, ...job.languages];
-        return <JobCard tags={tags} job={job}></JobCard>;
-      })}
+      {data.length != 0 ? (
+        data.map((job) => {
+          const tags = [job.role, job.level, ...job.languages];
+          return <JobCard tags={tags} job={job}></JobCard>;
+        })
+      ) : (
+        <h2>No results</h2>
+      )}
     </div>
   );
 };
