@@ -43,40 +43,53 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
   };
   return (
     <form className="filter">
-      <h2>Role</h2>
-      <div className="roleFilter">
-        <Checkbox value={"Frontend"} handleInput={handleRoleInput}></Checkbox>
-        <Checkbox value={"Backend"} handleInput={handleRoleInput}></Checkbox>
-        <Checkbox value={"Fullstack"} handleInput={handleRoleInput}></Checkbox>
+      <div className="inputContainer">
+        <div className="roleFilter">
+          <h2>Role</h2>
+          <Checkbox value={"Frontend"} handleInput={handleRoleInput}></Checkbox>
+          <Checkbox value={"Backend"} handleInput={handleRoleInput}></Checkbox>
+          <Checkbox
+            value={"Fullstack"}
+            handleInput={handleRoleInput}
+          ></Checkbox>
+        </div>
+        <div className="levelFilter">
+          <h2>Level</h2>
+          <Checkbox value={"Junior"} handleInput={handleLevelInput}></Checkbox>
+          <Checkbox
+            value={"Midweight"}
+            handleInput={handleLevelInput}
+          ></Checkbox>
+          <Checkbox value={"Senior"} handleInput={handleLevelInput}></Checkbox>
+        </div>
+        <div className="contractTypeFilter">
+          <h2>Contract Type</h2>
+          <Checkbox
+            value={"Full Time"}
+            handleInput={handleContractTypeInput}
+          ></Checkbox>
+          <Checkbox
+            value={"Contract"}
+            handleInput={handleContractTypeInput}
+          ></Checkbox>
+          <Checkbox
+            value={"Part Time"}
+            handleInput={handleContractTypeInput}
+          ></Checkbox>
+        </div>
       </div>
-      <div className="levelFilter">
-        <Checkbox value={"Junior"} handleInput={handleLevelInput}></Checkbox>
-        <Checkbox value={"Midweight"} handleInput={handleLevelInput}></Checkbox>
-        <Checkbox value={"Senior"} handleInput={handleLevelInput}></Checkbox>
+      <div className="buttonContainer">
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            applyFilters(roles, levels, contractTypes);
+          }}
+        >
+          Filter
+        </button>
+
+        <button onClick={() => {}}>Reset</button>
       </div>
-      <div className="contractTypeFilter">
-        <Checkbox
-          value={"Full Time"}
-          handleInput={handleContractTypeInput}
-        ></Checkbox>
-        <Checkbox
-          value={"Contract"}
-          handleInput={handleContractTypeInput}
-        ></Checkbox>
-        <Checkbox
-          value={"Part Time"}
-          handleInput={handleContractTypeInput}
-        ></Checkbox>
-      </div>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          applyFilters(roles, levels, contractTypes);
-        }}
-      >
-        Filter
-      </button>
-      <button onClick={() => {}}>Reset</button>
     </form>
   );
 };
