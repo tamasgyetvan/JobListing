@@ -14,7 +14,11 @@ function App() {
   const [jobData, setJobData] = useState<Array<JobObject>>(data);
 
   const applyFilters = useCallback(
-    (roleFilterArray: Array<string>, levelFilterArray: Array<string>) => {
+    (
+      roleFilterArray: Array<string>,
+      levelFilterArray: Array<string>,
+      contractTypeFilterArray: Array<string>
+    ) => {
       let filterData = data;
 
       console.log(roleFilterArray, levelFilterArray, filterData);
@@ -27,6 +31,12 @@ function App() {
       if (levelFilterArray?.length !== 0) {
         filterData = filterData.filter((job) =>
           levelFilterArray.includes(job.level)
+        );
+      }
+
+      if (contractTypeFilterArray?.length !== 0) {
+        filterData = filterData.filter((job) =>
+          contractTypeFilterArray.includes(job.contract)
         );
       }
 

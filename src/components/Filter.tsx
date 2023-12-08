@@ -5,7 +5,8 @@ import { Checkbox } from "./Checkbox";
 type FilterProps = {
   applyFilters: (
     roleFilterArray: Array<string>,
-    levelFilterArray: Array<string>
+    levelFilterArray: Array<string>,
+    contractTypeFilterArray: Array<string>
   ) => void;
 };
 
@@ -37,6 +38,8 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
         (contractType) => contractType !== e.target.value
       );
     }
+
+    console.log(contractTypes);
   };
   return (
     <form className="filter">
@@ -68,7 +71,7 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
       <button
         onClick={(e) => {
           e.preventDefault();
-          applyFilters(roles, levels);
+          applyFilters(roles, levels, contractTypes);
         }}
       >
         Filter
