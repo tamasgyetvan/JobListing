@@ -1,6 +1,8 @@
 import React from "react";
 import "../scss/components/_filter.scss";
-import { Checkbox } from "./Checkbox";
+import { RoleFilter } from "./RoleFilter";
+import { LevelFilter } from "./LevelFilter";
+import { ContractTypeFilter } from "./ContractTypeFilter";
 
 type FilterProps = {
   applyFilters: (
@@ -38,45 +40,15 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
         (contractType) => contractType !== e.target.value
       );
     }
-
-    console.log(contractTypes);
   };
   return (
     <form className="filter">
       <div className="inputContainer">
-        <div className="roleFilter">
-          <h2>Role</h2>
-          <Checkbox value={"Frontend"} handleInput={handleRoleInput}></Checkbox>
-          <Checkbox value={"Backend"} handleInput={handleRoleInput}></Checkbox>
-          <Checkbox
-            value={"Fullstack"}
-            handleInput={handleRoleInput}
-          ></Checkbox>
-        </div>
-        <div className="levelFilter">
-          <h2>Level</h2>
-          <Checkbox value={"Junior"} handleInput={handleLevelInput}></Checkbox>
-          <Checkbox
-            value={"Midweight"}
-            handleInput={handleLevelInput}
-          ></Checkbox>
-          <Checkbox value={"Senior"} handleInput={handleLevelInput}></Checkbox>
-        </div>
-        <div className="contractTypeFilter">
-          <h2>Contract Type</h2>
-          <Checkbox
-            value={"Full Time"}
-            handleInput={handleContractTypeInput}
-          ></Checkbox>
-          <Checkbox
-            value={"Contract"}
-            handleInput={handleContractTypeInput}
-          ></Checkbox>
-          <Checkbox
-            value={"Part Time"}
-            handleInput={handleContractTypeInput}
-          ></Checkbox>
-        </div>
+        <RoleFilter handleRoleInput={handleRoleInput}></RoleFilter>
+        <LevelFilter handleLevelInput={handleLevelInput}></LevelFilter>
+        <ContractTypeFilter
+          handleContractTypeInput={handleContractTypeInput}
+        ></ContractTypeFilter>
       </div>
       <div className="buttonContainer">
         <button
