@@ -10,9 +10,11 @@ type FilterProps = {
     levelFilterArray: Array<string>,
     contractTypeFilterArray: Array<string>
   ) => void;
+
+  resetData: () => void;
 };
 
-export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
+export const Filter: React.FC<FilterProps> = ({ applyFilters, resetData }) => {
   let roles: Array<string> = [];
   let levels: Array<string> = [];
   let contractTypes: Array<string> = [];
@@ -57,7 +59,14 @@ export const Filter: React.FC<FilterProps> = ({ applyFilters }) => {
         >
           Filter
         </button>
-        <button onClick={() => {}}>Reset</button>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            resetData();
+          }}
+        >
+          Reset
+        </button>
       </div>
     </form>
   );

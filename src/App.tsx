@@ -44,11 +44,15 @@ function App() {
     []
   );
 
+  const resetData = useCallback(() => {
+    setJobData(data);
+  }, []);
+
   return (
     <>
       <Header />
       <main>
-        <MemoFilter applyFilters={applyFilters} />
+        <MemoFilter applyFilters={applyFilters} resetData={resetData} />
         <JobList data={jobData} />
       </main>
     </>
