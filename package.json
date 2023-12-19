@@ -1,16 +1,17 @@
 {
-  "homepage": "tamasgyetvan.github.io/JobListing",
+  "homepage": "https://tamasgyetvan.github.io/JobListing",
   "name": "joblisting",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+
   },
   "dependencies": {
     "gh-pages": "^6.1.0",
