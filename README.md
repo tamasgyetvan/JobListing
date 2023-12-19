@@ -1,27 +1,20 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Job Listings Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Design preview for the Job Listings coding challenge](./design/desktop-preview.jpg)
 
-Currently, two official plugins are available:
+## Welcome! 👋
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## The challenge
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Your challenge is to build out this job listing page and get it looking as close to the design as possible.
 
-- Configure the top-level `parserOptions` property like this:
+You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Your users should be able to:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Filter job listings based on the categories using the HTML `data-` attribute
+
+
