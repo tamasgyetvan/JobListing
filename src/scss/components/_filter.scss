@@ -12,6 +12,10 @@ form {
   margin-top: -75px;
   margin-bottom: 50px;
 
+  label {
+    display: flex;
+    gap: 2rem
+  }
 
 
   h2 {
@@ -57,5 +61,21 @@ form {
     width: min-content;
     gap: 0.5rem;
     padding: 5px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  form {
+
+    label {
+      
+      font-size: 1.4rem;
+    }
+  
+  
+    h2 {
+      font-size: 1.6rem;
+    }
   }
 }
